@@ -10,17 +10,19 @@
 
         <script>
             let p = document.createElement('p')
-            let textnode = document.createTextNode('Water');
+            let textnode = document.createTextNode('Water'); //Text between p
             p.appendChild(textnode)
              p.setAttribute("id", 'customID');
             /* Different behavior, Browser moves the element p from the body to the element
              * unless we clone it .cloneNode(true)
              */
-                        
+            
+            // will look like <p id="customID">Water<p/>
+    
             document.body.appendChild(p)
 
             let div = document.querySelector('div')
-            div.appendChild(p)
+            div.appendChild(p.cloneNode(true))
             
             
             

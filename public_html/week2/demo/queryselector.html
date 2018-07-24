@@ -24,16 +24,18 @@
         <div class="error">TODO write content</div>
         <div>TODO write content</div>
         <script>
+            window.document
+            let element = document.querySelector('.error') //querySelector picks the class in CSS or HTML to manipulate in javascript.
 
-            var element = document.querySelector('.error')
-
-            // element.classList.add('error');
-            element.classList.add('big')
+            element.classList.add('error');
+            // element.classList.add('big')
+            element.classList.remove('big'); //Deletes the 'big' class and adds the 'error' class
             
             // Todo: function to remove error class
-
-            // element.style.backgroundColor = 'blue';
-            element.style.textAlign = 'center'
+            // Convert CSS styles into camelCase
+            element.style.color = 'white';
+            element.style.backgroundColor = 'blue';
+            element.style.textAlign = 'center';
 
         </script>
     </body>

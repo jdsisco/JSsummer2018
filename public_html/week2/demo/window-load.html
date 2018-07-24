@@ -9,7 +9,7 @@
         <div>TODO write content</div>
         <script>
 
-            window.addEventListener("load", initialize)
+            window.addEventListener("resize", initialize) 
 
             function initialize() {
                 //All my code will go here.
@@ -17,6 +17,12 @@
                 console.log('page is loaded')
 
             }
+            document.addEventListener("click", tapped)
+            function tapped(){
+                console.log('The page has been clicked.')
+            }
+            /* document.onclick =(function) is an older format and would
+             * overwrite previous events. Use addEventListener */
         </script>
     </body>
 </html>
