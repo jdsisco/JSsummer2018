@@ -3,10 +3,10 @@
  * want to access and change. 
  * 
  */
-var label = document.querySelector('label');
-var textField = document.querySelector('input[name="words"]');
-var addTextBtn = document.querySelector('input[name="add"]');
-var divToAdd = document.querySelector('div');
+let label = document.querySelector('label');
+let textField = document.querySelector('input[name="words"]');
+let addTextBtn = document.querySelector('input[name="add"]');
+let divToAdd = document.querySelector('div');
 
 /*
  * The addEventListener allows you to respond to the
@@ -29,14 +29,19 @@ addTextBtn.addEventListener('click',addText );
  * you can call it like so: addText();
  */
 function addText() {
+        console.log(textField.name)
+        console.log(textField.type)
+        console.log(textField.value)
       
-    if ( textField.value.length ) {
-        
-        label.classList.remove('error');
-        var result = '<p>' + textField.value + '</p>';
+    if ( textField.value.length /* Shortcut for value, as long as something is entered, it is true*/) {
+         //textField refers to the HTML input in the HTML file.
+        label.classList.remove('error'); 
+       
+        let result = '<p>' + textField.value + '</p>';
         divToAdd.innerHTML += result;
-        
-     } else {
+        textField.value = '';
+        // Also can write divToAdd.innerHTML +=`<p>$textField.value$</p>`; The same as the two top lines.
+    } else {
         label.classList.add('error'); 
      }
     

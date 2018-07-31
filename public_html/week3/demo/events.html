@@ -13,7 +13,8 @@
             }
             
             .big {
-                width: 1000px
+                width: 1000px;
+                
                 
             }
             
@@ -33,16 +34,20 @@
                 mouseenter	keyup           focus           scroll
                 mouseleave      input           blur            unload
                 
+                touch screen events work with click events.
              */
             
-            var div = document.querySelector('.error');
+            let div = document.querySelector('.error'); // class name is error
             
-            document.querySelector('button').addEventListener('click', clickME);
+            document.querySelector('button').addEventListener('mouseenter', clickME);
             
             // Add a paramter called 'e' or 'event'
             function clickME() {
                 // Output to the console the paramter
-                div.classList.add('big');
+                div.classList.add('big'); //inputs the css class
+                div.style.color='yellow'; // changes the text color as a css property
+                this.style.color='red'; /* Changes the button text color (this is a keyword registed to itself.
+                   Currently registered to the button)*/
             }
         
             
