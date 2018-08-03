@@ -25,15 +25,31 @@
 
             console.log('function', materials.slice().map(function (material) {
                 return material.length;
-            })); // [8, 6, 7, 9]
+            })); // [8, 6, 7, 9] (replaces the word with the length of that word)
 
             console.log('arrow function', materials.slice().map((material) => {
                 return material.length ;
             })); // [8, 6, 7, 9]
 
 
-            console.log('arrow function shortcut', materials.slice().map( material => material.length )); // [8, 6, 7, 9] implied "return"
-
+            console.log('arrow function shortcut', materials.slice().map( material => material.length )); 
+            // [8, 6, 7, 9] implied "return"
+            
+           /* OLD WAY OF FUNCTIONS 
+            * function add(num1, num2){
+                
+            }*/
+    
+            /* NEW WAY OF FUNCTIONS
+             * let add = (num1, num2) =>{
+             
+              
+             * }*/
+            
+            //to create an arrow function, remove the function keyword, declare
+            // the function and add an arrow (=>) before the brackets {}
+            // Arrow functions allow for quick returns for the value. 
+            // Only works if it returns one value with one permater.
 
         </script>
     </body>

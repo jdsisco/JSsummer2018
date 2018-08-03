@@ -13,19 +13,18 @@
             let words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 
             let result = words.filter(wordLimit);
-            
+            let arrowResult = words.filter(w => w.length > 6);
             function wordLimit(word) {
                 return word.length > 6
             }
-
+            
             console.log(result);
-            
-            
-            
+            console.log (arrowResult);
             
             let arr = [5, 6, 13, 0, 1, 18, 23];
             
-            let even = arr.filter(function(v) { return  v % 2 === 0}); 
+            let even = arr.filter(function(v) { return  v % 2 === 0});
+            //let arrowEven = arr.filter(v => v%2 === 0)
             console.log('even', even)
             
         </script>

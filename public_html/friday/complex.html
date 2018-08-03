@@ -10,7 +10,7 @@
         
         <script>
             
-            
+           // (data reference) complex[0].person.location
             let complex = [
                 { person: 
                         {   name: 'Gabriel',
@@ -53,7 +53,7 @@
                 return accumulator.concat(currentValue.person.location)
             }, [])
                 .map(ZIP => ~~ZIP) // ~~ shortcut for parseInt
-                .filter(ZIP => ZIP.length === 5) // .toString()
+                .filter(ZIP => ZIP.toString().length === 5) // .toString()
             
             console.log(locationsFilter)
             
