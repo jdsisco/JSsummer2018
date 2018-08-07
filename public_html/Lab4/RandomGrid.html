@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Week 4 - Jamila Sisco</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .purple{background-color: purple;}
+            .red{background-color: red;}
+            .blue{background-color: blue;}
+
+        </style>
+    </head>
+    <body>
+
+        <br><input type="text" name="random" /><br>
+        <button class='button1'> Generate Grid </button>
+        <div></div><br><p></p>
+        <script type="text/javascript">
+
+            let random = document.querySelector('[name="random"]')
+
+            let button1 = document.querySelector('.button1')
+
+            button1.addEventListener('click', generate)
+            function randomNumber(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+            function generate() {
+                let randInt = parseInt(random.value, 10)
+                if (isNaN(randInt)) {
+                    randInt = 0;
+                }
+                ;
+                console.log(randInt);
+                let items = [];
+                let str = '';
+                let innerSum = 0;
+
+                str += '<table border="1">';
+                for (var i = 0; i < random.value; i++) {
+                    items[i] = [];
+                    str += '<tr>'
+                    for (var j = 0; j < random.value; j++) {
+                        items[i][j] = i * j;
+                        let interior = randomNumber(1,100)
+                        innerSum = innerSum + interior;
+                       
+                       if (interior % 2 == 0 && interior % 3 == 0) {
+                            str += `<td class="purple">${interior}</td>`;
+                        } else if (interior % 3 == 0) {
+                            str += `<td class="red">${interior}</td>`;
+                        } else if (interior % 2 == 0) {
+                            str += `<td class="blue">${interior}</td>`;
+                        } else {
+                            str += `<td>${interior}</td>`
+                        }
+
+                }
+                    str += '</tr>'
+                }
+                str += '</table>';
+                let average = innerSum/(i*j);
+                average = average.toFixed(2);
+
+                document.querySelector('div').innerHTML = str;
+                document.querySelector('p').innerHTML = "The average = " + average + ".";
+                
+            }
+
+        </script>
+    </body>
+</html>

@@ -10,8 +10,8 @@
         
         <script type="text/javascript">
             
-            var items = [];
-            var str = '';
+            let items = [];
+            let str = '';
             /* we can create a matrix by going through the array and 
              * creating each index as a new array;
              * within the row we can access the columns.
@@ -23,10 +23,13 @@
             for ( var i = 0; i < 10; i++) {
                 items[i] = [];
                 str += '<tr>'
-               for ( var j = 0; j < 10; j++) {                
-                    items[i][j] = i*j;     
-                    str += '<td>' + items[i][j] + '</td>';
-                }    
+                    for ( var j = 0; j < 10; j++) {                
+                         items[i][j] = i*j;     
+                         str += '<td>' + items[i][j] + '</td>';
+                         //if ()
+                           //  str += `<td class ="red">${items[i][j]}<td>`
+                         
+                     }    
                 str += '</tr>'
             }
             str += '</table>';

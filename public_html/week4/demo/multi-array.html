@@ -22,13 +22,14 @@
             
             /*
              * To loop through you need to use two for loops
-             * think of it as a table with rows, then the iems in
+             * think of it as a table with rows, then the items in
              * the row
              */
             var row;
             for ( var i = 0; i < myvar.length; i ++ ){
                 row = myvar[i];
-                
+                // *if (!Array.isArray(row)) continue; 
+                //* knocks out of the loop if it's not an array. 
                 for ( var j = 0; j < row.length; j++ ) {
                     /*
                      * inside the inner loop you can add your logic
