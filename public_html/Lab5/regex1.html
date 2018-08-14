@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title> Jamila Sisco - Lab 5(1)</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .ok{
+                border-color: green;
+            }
+            .error{
+                border-color: red;
+            }
+            
+        </style>
+    </head>
+    <input type="text" name="testReg"/>
+    <button>Test</button>
+         <script>
+             let re = /^[0-9]+$/
+             let inputN = document.querySelector('input')
+             let btn = document.querySelector('button')
+            btn.addEventListener('click', function(){
+                inputN.classList.remove('ok');
+                inputN.classList.remove('error');
+                if (re.test(inputN.value)){
+                    inputN.classList.add('ok')
+                } else if (inputN.value.length){
+                    inputN.classList.add('error')
+                } 
+            })
+       
+        </script>
+    </body>
+</html>
