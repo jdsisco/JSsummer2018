@@ -16,7 +16,12 @@ and open the template in the editor.
             let inputSS = document.querySelector('[name="testReg"]')
             let re = /([\d]{3})[-|.| ]?([\d]{2})[-|.| ]?([\d]{4})/;
             inputSS.addEventListener('blur', ssSwitch )
-            inputSS.addEventListener('focus', ssRep) 
+            inputSS.addEventListener('focus', ssRep)
+            inputSS.addEventListener('keyup', noNumbers )
+            function noNumbers(){
+              let numSkip = /[^0-9]+/g
+              this.value = this.value.replace(numSkip, '')
+            }
             let socialSS = inputSS.value;
              let noNum = /[^0-9]+/g
             function ssSwitch(){

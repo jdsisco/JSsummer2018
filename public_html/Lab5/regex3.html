@@ -16,7 +16,7 @@ and open the template in the editor.
             let input = document.querySelector('[name="testReg"]')
             input.addEventListener('keyup', noNumbers )
             function noNumbers(){
-              let noNum = /[^a-z]+/gi
+              let noNum = /[^0-9]+/g
               this.value = this.value.replace(noNum, '')
             }
         </script>

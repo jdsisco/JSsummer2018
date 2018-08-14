@@ -18,6 +18,11 @@ and open the template in the editor.
             let re = /([\d]{3})[-|.| ]?([\d]{3})[-|.| ]?([\d]{4})/;
             inputPhone.addEventListener('blur', phoneSwitch )
             inputPhone.addEventListener('focus', phoneRep) 
+            inputPhone.addEventListener('keyup', noNumbers )
+            function noNumbers(){
+              let numSkip = /[^0-9]+/g
+              this.value = this.value.replace(numSkip, '')
+            }
             function phoneSwitch(){
                 this.value = this.value.replace(re, '($1)-$2-$3') 
             }
