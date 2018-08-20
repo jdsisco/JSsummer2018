@@ -24,6 +24,7 @@
             })
             .then(function(json) { 
                 content.innerHTML = JSON.stringify(json)
+        // parse converts text into json; stringify converts json into text.
                 console.log(json)
             })
             .catch(function(error) { 

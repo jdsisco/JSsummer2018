@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Jamila Sisco -- Lab 6</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
+    </head>
+    <body>
+        <div> </div>
+        <script>
+            
+            var tally = 'users.json'
+            fetch(tally)
+            .then(function(response) {              
+                  return response.json()               
+            })
+            .then(displayUsers) 
+    
+            function displayUsers(json){
+                let div = document.querySelector('div')
+                let html = '';
+                html += '<table class=table><tr>';
+                html += '<tr><th>User Name:</th> <th>Email:</th> <th>Registration Date:</th> <th>Active User:</th>';
+                 data = json
+                for (let user in data){
+                     html +=`<tr><td><div ${user} >${data[user].username}</td>`;
+                     html +=`<td><div ${user} ><a href="mailto:${data[user].email}">${data[user].email} </a></td>`;
+                let formattedDate = new Date(data[user].registered).toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' })
+                     html +=`<td><div ${user} >${formattedDate}</td>`;
+                     html +=`<td><div ${user} >${data[user].isActive}</td>`;
+                }
+                
+                html += '</table>';
+                
+                div.innerHTML = html;
+            }
+            
+            
+        </script>
+    </body>
+</html>

@@ -12,7 +12,7 @@
         </style>
     </head>
     <body>
-        <div data-index="3">Click me!</div>
+        <div data-index="3" data-time="8-11-2018">Click me!</div>
         
         <script>
             /*
@@ -23,14 +23,16 @@
              */
             var div = document.querySelector('div')
             
-            console.log( div.dataset, div.dataset.index, div.getAttribute('data-index'));
-            
+            console.log( div.dataset, div.dataset.index, div.dataset.time, div.getAttribute('data-index'));
+            //dataset only works for attributes with a data set, the dot is the name of the dash-
+            //getAttribute is the same as dataset, using the full name.
             div.addEventListener('click', function(){
                 let randIndex = Math.ceil(Math.random()*10) + 1
                 let time = new Date().getTime()
                 // this.setAttribute('data-index', randIndex)
                 this.dataset.index = randIndex
-                console.log( this.dataset, this.dataset.index, this.getAttribute('data-index'));                
+                this.dataset.time = time
+                console.log( this.dataset, this.dataset.index, this.dataset.time, this.getAttribute('data-index'));                
             })  
         </script>
     </body>
