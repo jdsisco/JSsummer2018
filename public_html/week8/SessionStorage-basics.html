@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        
+        <script type="text/javascript">
+            
+            /*
+            localStorage.clear();
+            localStorage.setItem();
+            localStorage.getItem();
+            localStorage.removeItem();
+            */
+           
+           
+           
+            
+            
+            let test = sessionStorage.getItem("test");
+            
+            
+            sessionStorage.setItem("test", "hello world");
+            
+            document.querySelector('div').innerHTML = test || 'Nothing in Storage';
+            
+            console.log(sessionStorage.getItem('test2'));
+            console.log(sessionStorage.removeItem('test2'));
+            
+            
+            sessionStorage.setItem("test2", "hello world2");
+            sessionStorage.removeItem('test2')
+            let test2 = sessionStorage.getItem('test2');
+            
+            
+            //localStorage.clear();
+            if ( test2 ){
+               console.log('test2 has a value'); 
+            } else {
+               console.log('test2 has NO value');  
+            }
+            
+            
+        </script>
+    </body>
+</html>
