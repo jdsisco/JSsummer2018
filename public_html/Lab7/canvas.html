@@ -17,15 +17,73 @@ and open the template in the editor.
     </head>
     <body>
             <canvas id="race" width="750" height="150"></canvas>
-             <br />
+             <br/>
             <button id="play">Play</button>
 
 
         <script type="text/javascript">
+            var race = document.querySelector('#race');
+            var play = document.querySelector('#play');
+                play.addEventListener('click', gameStart);
+            var contx = race.getContext('2d');
+            var width = 50,
+                height = 25,
+                xaxis1 = 0,
+                xaxis2 = 0;
+            var canvasRight = ( window.race.width - window.width - window.width);
+            
+            function drawLine() {
+               
+                window.contx.beginPath();
+                window.contx.moveTo(700, 0); //x, y
+                window.contx.lineTo(700, window.race.height);
 
+                window.contx.stroke();
+            }
+            function drawClear(){
+                window.contx.clearRect(0, 0, window.race.width, window.race.height); // x y / w h
+            }
+            function gameStart(){
+                if ( window.xaxis1 < window.canvasRight && window.xaxis2 < window.canvasRight) {
+                    window.drawClear();
+                    window.drawLine();
+                    play.style.display = "none";
+                    window.xaxis1 += randNum(20)
+                    window.xaxis2 += randNum(20)
+                    window.contx.fillStyle = "red";
+                    window.contx.fillRect(window.xaxis1, 20, window.width, window.height);
+                    window.contx.fillStyle = "blue";
+                    window.contx.fillRect(window.xaxis2, 90, window.width, window.height);
+                    setTimeout(gameStart, 100);
+                } else { 
+                    if (window.xaxis1 > window.canvasRight){
+                        drawText('Red Wins','red')
+                    }
+                    else {
+                        
+                        drawText('Blue Wins','blue')
+                    }
+                    
+                     window.reset();
+                     
+                    play.style.display = "block";
+                }
+               
+            }
+            
              function randNum(max) {
                 return Math.ceil(Math.random()*max) + 1;
                 }
+                
+             function reset() {
+               window.xaxis1 = 0;
+               window.xaxis2 = 0;  
+            }
+                function drawText(winner, color){
+                window.contx.fillStyle = color;
+                window.contx.font = "16pt Helvetica";
+                window.contx.fillText(winner, (window.race.width / 2) - 100, window.race.height / 2); //x,y
+            }
 </script>
     </body>
 </html>
