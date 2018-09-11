@@ -6,7 +6,11 @@
  * @return {object} JSON
  */
 function returnJSON() {
-
+  
+let data = {};
+data.name = 'John Doe';
+data.id = '0123456789';
+return data
 }
 
 /**
@@ -15,6 +19,10 @@ function returnJSON() {
  * @return {String} The value
  */
 function insertValueIntoInput(){
+    
+let input = document.querySelector('[name="fullname"]');
+input.value = "test"
+return "test";
 
 }
 
@@ -24,7 +32,9 @@ function insertValueIntoInput(){
  * @return {String} The value
  */
 function insertClassNameIntoInput(){
-
+let input = document.querySelector('input')
+input.classList.add('fullname')
+return 'fullname'
 }
 
 /**
@@ -34,7 +44,12 @@ function insertClassNameIntoInput(){
  * @return {void}
  */
 function buttonEvent(){
-
+let button = document.querySelector('button')
+button.addEventListener('click', paragraph)
+function paragraph(){
+let p = document.createElement('p')
+document.body.appendChild(p)
+}
 }
 
 
@@ -51,8 +66,26 @@ function buttonEvent(){
  * @return {Number} largest
  */
 function largestNumberOfFourArrays(arr){
+   
+      var row;
+      var value1 = 0 
+           for (let j = 0; j < arr.length; j++) {
+               row = arr[j];
+              for ( let i = 0; i < row.length; i++ ) {
+                    if ( value1 < row[i] ) {
+                       value1 = row[i]
+                       
+                    } 
+                    console.log(row[i]);
+                    console.log(value1);
+                    
+                }
+            
+             
+            } return value1
+//            
+
      
-    
 }
 
 
